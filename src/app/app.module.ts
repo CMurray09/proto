@@ -8,13 +8,15 @@ import {FormsModule} from "@angular/forms";
 import { HomeComponent } from './home/home.component';
 import { VideoComponent } from './video/video.component';
 import {HttpClientModule} from "@angular/common/http";
+import { VideoIdComponent } from './video-id/video-id.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    VideoComponent
+    VideoComponent,
+    VideoIdComponent
   ],
   imports: [
     BrowserModule,
