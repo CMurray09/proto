@@ -1,0 +1,32 @@
+<section class="flex h-screen justify-center items-center bg-gray-800">
+  <form #loginForm="ngForm" (ngSubmit)="login()" class="w-screen">
+    <!-- Email -->
+    <div class="mb-3 flex flex-col justify-center items-center">
+      <label class="w-1/2 max-w-md text-start text-white inline-block mb-2">Email</label>
+      <input #email="ngModel"
+             type="email" name="email" [(ngModel)]="credentials.email"
+             class="block w-1/2 max-w-md text-white py-1.5 px-3 border border-gray-400 transition
+                    duration-500 focus:outline-none rounded bg-transparent
+                    focus:border-indigo-400"
+             placeholder="your@email.com" required
+             pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"/>
+      <p *ngIf="email.errors && email.touched && email.dirty" class="text-red-400">Email is invalid</p>
+    </div>
+    <!-- Password -->
+    <div class="mb-3 flex flex-col justify-center items-center">
+      <label class="w-1/2 max-w-md text-start text-white inline-block mb-2">Password</label>
+      <input #password="ngModel" type="password" name="password" [(ngModel)]="credentials.password"
+             class="block w-1/2 max-w-md text-white py-1.5 px-3 border border-gray-400 transition
+                  duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400"
+             placeholder="Password" required/>
+      <p *ngIf="password.errors && password.touched && password.dirty" class="text-red-400">Password is required</p>
+    </div>
+    <div class="mb-3 flex flex-col justify-center items-center">
+      <button type="submit" [disabled]="loginForm.invalid"
+              class="w-1/2 max-w-md text-center bg-cyan-600 text-white py-1.5 px-3 rounded transition
+                  hover:bg-cyan-500 disabled:opacity-50 disabled:bg-cyan-600">
+        Submit
+      </button>
+    </div>
+  </form>
+</section>
