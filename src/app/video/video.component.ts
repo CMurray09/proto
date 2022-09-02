@@ -6,7 +6,7 @@ import {VideoService} from "src/app/services/video.service";
   templateUrl: './video.component.html',
   styleUrls: ['./video.component.css']
 })
-
+// TODO: Fix the videos 'any' type
 export class VideoComponent implements OnInit {
   videos: any;
 

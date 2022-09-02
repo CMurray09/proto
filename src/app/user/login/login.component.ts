@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   async login(): Promise<void> {
-    // Decided to redirect the user to the homepage after 'logging in'
+    // Redirect the user to the homepage after 'logging in'
     await this.route.navigate(['/']);
   }
 
